@@ -1,0 +1,1650 @@
+/* =========================================================
+   GREATWOOD FRONTIER ROLEPLAY
+   Main Website Stylesheet
+   ========================================================= */
+
+
+/* =========================================================
+   01. ROOT / DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+
+    --gw-green: #6B911B;
+    --gw-green-light: #83AA2A;
+    --gw-green-dark: #3E5912;
+
+    --gw-black: #080A08;
+    --gw-black-soft: #0D110D;
+
+    --gw-panel: #111711;
+    --gw-panel-light: #171E17;
+
+    --gw-border: rgba(107, 145, 27, 0.22);
+
+    --gw-white: #F3F5EF;
+    --gw-text: #D9DED5;
+    --gw-muted: #8C9588;
+
+    --gw-gold: #C5A85A;
+
+    --header-height: 82px;
+
+}
+
+
+/* =========================================================
+   02. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background:
+        radial-gradient(
+            circle at 50% -20%,
+            rgba(107, 145, 27, 0.14),
+            transparent 45%
+        ),
+        var(--gw-black);
+
+    color: var(--gw-white);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   03. GENERAL
+   ========================================================= */
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+button {
+
+    font-family: inherit;
+
+}
+
+.section {
+
+    width: min(1200px, 92%);
+
+    margin: 0 auto;
+
+    padding: 120px 0;
+
+}
+
+.section-heading {
+
+    margin-bottom: 60px;
+
+}
+
+.section-heading.centered {
+
+    text-align: center;
+
+}
+
+.section-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--gw-green-light);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+
+    text-transform: uppercase;
+
+}
+
+.section-label::before {
+
+    content: "";
+
+    width: 28px;
+
+    height: 2px;
+
+    background: var(--gw-green);
+
+}
+
+.section-heading.centered .section-label::before {
+
+    display: none;
+
+}
+
+.section-heading h2 {
+
+    margin-top: 16px;
+
+    font-family:
+        "Oswald",
+        Arial,
+        sans-serif;
+
+    font-size: clamp(42px, 6vw, 72px);
+
+    line-height: 0.98;
+
+    text-transform: uppercase;
+
+    letter-spacing: -0.02em;
+
+}
+
+.section-heading h2 span {
+
+    color: var(--gw-green);
+
+}
+
+.section-heading p {
+
+    max-width: 650px;
+
+    margin: 20px auto 0;
+
+    color: var(--gw-muted);
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================================
+   04. HEADER
+   ========================================================= */
+
+.site-header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: var(--header-height);
+
+    z-index: 1000;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(8, 10, 8, 0.96),
+            rgba(8, 10, 8, 0.78)
+        );
+
+    border-bottom: 1px solid transparent;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        backdrop-filter 0.3s ease;
+
+}
+
+.site-header.scrolled {
+
+    background:
+        rgba(8, 10, 8, 0.94);
+
+    border-bottom-color:
+        var(--gw-border);
+
+    backdrop-filter:
+        blur(18px);
+
+}
+
+.nav-container {
+
+    width: min(1450px, 94%);
+
+    height: 100%;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+
+}
+
+.brand-mark {
+
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid
+        rgba(107, 145, 27, 0.6);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gw-green),
+            var(--gw-green-dark)
+        );
+
+    color: white;
+
+    font-family: "Oswald", sans-serif;
+
+    font-weight: 700;
+
+    font-size: 16px;
+
+    letter-spacing: 0.05em;
+
+    box-shadow:
+        0 0 25px
+        rgba(107, 145, 27, 0.18);
+
+}
+
+.brand-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1;
+
+}
+
+.brand-text strong {
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size: 19px;
+
+    letter-spacing: 0.08em;
+
+}
+
+.brand-text span {
+
+    margin-top: 4px;
+
+    color: var(--gw-green-light);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.main-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+}
+
+.main-nav a {
+
+    position: relative;
+
+    color: #AAB2A5;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+.main-nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+
+    height: 2px;
+
+    background:
+        var(--gw-green);
+
+    transition:
+        width 0.25s ease;
+
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+
+    color: white;
+
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   NAV BUTTONS
+   ========================================================= */
+
+.nav-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.nav-apply {
+
+    padding: 10px 15px;
+
+    border: 1px solid
+        var(--gw-border);
+
+    color: var(--gw-text);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    transition: 0.25s ease;
+
+}
+
+.nav-apply:hover {
+
+    border-color:
+        var(--gw-green);
+
+    color:
+        var(--gw-green-light);
+
+}
+
+.discord-button {
+
+    padding: 11px 18px;
+
+    background:
+        var(--gw-green);
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    transition: 0.25s ease;
+
+}
+
+.discord-button:hover {
+
+    background:
+        var(--gw-green-light);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(107, 145, 27, 0.25);
+
+}
+
+
+/* =========================================================
+   05. HERO
+   ========================================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        calc(var(--header-height) + 80px)
+        8%
+        100px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse at 70% 50%,
+            rgba(107, 145, 27, 0.13),
+            transparent 42%
+        ),
+
+        linear-gradient(
+            120deg,
+            #080A08 10%,
+            #0D140C 55%,
+            #10180E 100%
+        );
+
+}
+
+
+/* Atmospheric grid */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.08;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,0.08) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.08) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        60px 60px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+
+}
+
+
+/* Green atmosphere */
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    right: -250px;
+    top: 15%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(107,145,27,0.17),
+            transparent 65%
+        );
+
+    filter: blur(30px);
+
+}
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+}
+
+.hero-eyebrow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    color:
+        var(--gw-green-light);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+
+}
+
+.hero-eyebrow span {
+
+    width: 34px;
+
+    height: 2px;
+
+    background:
+        var(--gw-green);
+
+}
+
+.hero h1 {
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        clamp(65px, 10vw, 145px);
+
+    line-height:
+        0.82;
+
+    letter-spacing:
+        -0.035em;
+
+    text-transform:
+        uppercase;
+
+}
+
+.hero h1 span {
+
+    display: block;
+
+    margin-top: 12px;
+
+    color:
+        var(--gw-green);
+
+    font-size:
+        0.39em;
+
+    letter-spacing:
+        0.11em;
+
+}
+
+.hero-tagline {
+
+    margin-top: 30px;
+
+    color:
+        var(--gw-gold);
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing:
+        0.28em;
+
+}
+
+.hero-description {
+
+    max-width: 670px;
+
+    margin-top: 20px;
+
+    color:
+        var(--gw-muted);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+}
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    min-height: 50px;
+
+    padding: 0 24px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+.button-primary {
+
+    background:
+        var(--gw-green);
+
+    color: white;
+
+}
+
+.button-primary:hover {
+
+    background:
+        var(--gw-green-light);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(107,145,27,0.25);
+
+}
+
+.button-secondary {
+
+    border: 1px solid
+        rgba(255,255,255,0.15);
+
+    background:
+        rgba(255,255,255,0.025);
+
+    color:
+        var(--gw-text);
+
+}
+
+.button-secondary:hover {
+
+    border-color:
+        var(--gw-green);
+
+    color:
+        white;
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =========================================================
+   HERO SCROLL
+   ========================================================= */
+
+.hero-scroll {
+
+    position: absolute;
+
+    left: 8%;
+
+    bottom: 35px;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+.hero-scroll span {
+
+    width: 35px;
+
+    height: 1px;
+
+    background:
+        var(--gw-green);
+
+}
+
+.hero-scroll p {
+
+    color:
+        #657061;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing:
+        0.2em;
+
+}
+
+
+/* =========================================================
+   06. INTRO
+   ========================================================= */
+
+.intro {
+
+    border-top:
+        1px solid rgba(255,255,255,0.04);
+
+}
+
+.intro-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr 0.7fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+.intro-text p {
+
+    margin-bottom: 22px;
+
+    color:
+        var(--gw-muted);
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+}
+
+.text-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 12px;
+
+    color:
+        var(--gw-green-light);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+}
+
+.text-link span {
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+.text-link:hover span {
+
+    transform:
+        translateX(5px);
+
+}
+
+.intro-stat {
+
+    min-height: 270px;
+
+    padding: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border:
+        1px solid var(--gw-border);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(107,145,27,0.08),
+            rgba(255,255,255,0.015)
+        );
+
+}
+
+.large-mark {
+
+    display: block;
+
+    color:
+        rgba(107,145,27,0.18);
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size: 100px;
+
+    line-height: 0.8;
+
+}
+
+.intro-stat strong {
+
+    display: block;
+
+    margin-top: 25px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size: 24px;
+
+    letter-spacing:
+        0.08em;
+
+}
+
+.intro-stat p {
+
+    margin-top: 5px;
+
+    color:
+        var(--gw-muted);
+
+}
+
+
+/* =========================================================
+   07. GETTING STARTED
+   ========================================================= */
+
+.getting-started {
+
+    max-width: none;
+
+    padding-left: 4%;
+
+    padding-right: 4%;
+
+    background:
+        #0B0F0B;
+
+}
+
+.steps-grid {
+
+    width: min(1200px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border:
+        1px solid rgba(107,145,27,0.15);
+
+}
+
+.step-card {
+
+    position: relative;
+
+    padding: 40px 30px;
+
+    min-height: 310px;
+
+    border-right:
+        1px solid rgba(255,255,255,0.06);
+
+    transition:
+        background 0.3s ease;
+
+}
+
+.step-card:last-child {
+
+    border-right: none;
+
+}
+
+.step-card:hover {
+
+    background:
+        rgba(107,145,27,0.05);
+
+}
+
+.step-number {
+
+    color:
+        var(--gw-green);
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+}
+
+.step-card h3 {
+
+    margin-top: 45px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size: 24px;
+
+    text-transform:
+        uppercase;
+
+}
+
+.step-card p {
+
+    margin-top: 12px;
+
+    color:
+        var(--gw-muted);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+.step-card a {
+
+    position: absolute;
+
+    left: 30px;
+    bottom: 30px;
+
+    color:
+        var(--gw-green-light);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing:
+        0.1em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =========================================================
+   08. EXPLORE CARDS
+   ========================================================= */
+
+.explore-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+
+}
+
+.feature-card {
+
+    position: relative;
+
+    min-height: 280px;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255,255,255,0.07);
+
+    background:
+        linear-gradient(
+            145deg,
+            #111711,
+            #0D110D
+        );
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+.feature-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    right: -100px;
+    bottom: -100px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(107,145,27,0.15),
+            transparent 70%
+        );
+
+}
+
+.feature-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(107,145,27,0.4);
+
+}
+
+.feature-icon {
+
+    font-size: 27px;
+
+}
+
+.feature-content span {
+
+    color:
+        var(--gw-green-light);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing:
+        0.2em;
+
+}
+
+.feature-content h3 {
+
+    margin-top: 8px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size: 36px;
+
+    text-transform:
+        uppercase;
+
+}
+
+.feature-content p {
+
+    max-width: 520px;
+
+    margin-top: 8px;
+
+    color:
+        var(--gw-muted);
+
+    font-size: 14px;
+
+}
+
+.feature-arrow {
+
+    position: absolute;
+
+    right: 30px;
+    bottom: 25px;
+
+    color:
+        var(--gw-green);
+
+    font-size: 24px;
+
+}
+
+
+/* =========================================================
+   09. DEPARTMENTS
+   ========================================================= */
+
+.departments {
+
+    background:
+        #0B0F0B;
+
+    max-width: none;
+
+    padding-left: 4%;
+
+    padding-right: 4%;
+
+}
+
+.department-list {
+
+    width:
+        min(1100px, 100%);
+
+    margin:
+        0 auto;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+}
+
+.department-row {
+
+    display: grid;
+
+    grid-template-columns:
+        150px 1fr 40px;
+
+    align-items: center;
+
+    min-height: 110px;
+
+    gap: 30px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.07);
+
+    transition:
+        background 0.25s ease,
+        padding 0.25s ease;
+
+}
+
+.department-row:hover {
+
+    padding-left: 15px;
+
+    background:
+        rgba(107,145,27,0.035);
+
+}
+
+.department-symbol {
+
+    color:
+        var(--gw-green);
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing:
+        0.08em;
+
+}
+
+.department-info h3 {
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size: 23px;
+
+    text-transform:
+        uppercase;
+
+}
+
+.department-info p {
+
+    color:
+        var(--gw-muted);
+
+    font-size: 13px;
+
+}
+
+.department-row > span {
+
+    color:
+        var(--gw-green);
+
+    font-size: 23px;
+
+}
+
+.center-button {
+
+    margin-top: 45px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   10. GOVERNMENT
+   ========================================================= */
+
+.government-preview {
+
+    width: 100%;
+
+    min-height: 650px;
+
+    padding:
+        120px 10%;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(197,168,90,0.08),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #10140F,
+            #080A08
+        );
+
+}
+
+.government-content {
+
+    max-width: 600px;
+
+}
+
+.government-content h2 {
+
+    margin-top: 18px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        clamp(48px, 6vw, 80px);
+
+    line-height:
+        0.95;
+
+    text-transform:
+        uppercase;
+
+}
+
+.government-content h2 span {
+
+    color:
+        var(--gw-green);
+
+}
+
+.government-content p {
+
+    margin:
+        25px 0 30px;
+
+    color:
+        var(--gw-muted);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+/* Seal */
+
+.government-seal {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.seal-ring {
+
+    width: 310px;
+    height: 310px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(197,168,90,0.4);
+
+    border-radius: 50%;
+
+    outline:
+        12px double
+        rgba(197,168,90,0.08);
+
+    color:
+        var(--gw-gold);
+
+    text-align: center;
+
+}
+
+.seal-ring strong {
+
+    margin: 15px 0;
+
+    color:
+        var(--gw-green);
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size: 85px;
+
+    line-height: 1;
+
+}
+
+.seal-ring span {
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing:
+        0.25em;
+
+}
+
+
+/* =========================================================
+   11. NEWS
+   ========================================================= */
+
+.news-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+.news-card {
+
+    min-height: 300px;
+
+    padding: 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border:
+        1px solid rgba(255,255,255,0.07);
+
+    background:
+        #0E130E;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+.news-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--gw-border);
+
+}
+
+.news-meta {
+
+    color:
+        var(--gw-green-light);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing:
+        0.18em;
+
+}
+
+.news-card h3 {
+
+    margin-top: 35px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size: 27px;
+
+    line-height: 1.05;
+
+    text-transform:
+        uppercase;
+
+}
+
+.news-card p {
+
+    margin-top: 14px;
+
+    color:
+        var(--gw-muted);
+
+    font-size: 13px;
+
+}
+
+.news-card a {
+
+    margin-top: auto;
+
+    padding-top: 25px;
+
+    color:
+        var(--gw-green-light);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.1em;
+
+}
+
+
+/* =========================================================
+   12. FINAL CTA
+   ========================================================= */
+
+.final-cta {
+
+    position
